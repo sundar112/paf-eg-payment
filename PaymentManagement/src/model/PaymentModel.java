@@ -88,19 +88,19 @@ public class PaymentModel {
 			}
 			
 			// Prepare the html table to be displayed
-			output = "<table border='1' style=\"font-family: Arial, Helvetica, sans-serif; border-collapse: collapse; width: 100%; radius: 10px\">" +
-                    "<tr style=\"border: 1px solid #ddd; padding: 8px;\">" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">PaymentID</th>" +
-                    "<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">CardType</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">CardNumber</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">CardHolderName</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">CVC</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">CardExpireDate</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">Status</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">TaxAmount</th>" +
-                    "<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">TotalAmount</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">PaymentDate</th>" +
-					"<th style=\"padding-top: 12px; padding-bottom: 12px; text-align: left; background-color: #1E90FF; color: white;\">BillID</th>";
+			output = "<table border='1'\">" +
+                    "<tr \">" +
+					"<th \">PaymentID</th>" +
+                    "<th \">CardType</th>" +
+					"<th \">CardNumber</th>" +
+					"<th \">CardHolderName</th>" +
+					"<th\">CVC</th>" +
+					"<th \">CardExpireDate</th>" +
+					"<th \">Status</th>" +
+					"<th \">TaxAmount</th>" +
+                    "<th \">TotalAmount</th>" +
+					"<th \">PaymentDate</th>" +
+					"<th \">BillID</th>";
 						String query = "select * from payment";
 						Statement stmt = con.createStatement();
 						ResultSet rs = stmt.executeQuery(query);
@@ -119,17 +119,17 @@ public class PaymentModel {
 							String PaymentDate = rs.getString("PaymentDate");
 							int BillID = rs.getInt("BillID");
 
-							output += "<tr style=\"border: 1px solid #ddd; padding: 8px;\"><td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + PaymentID + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + CardType + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + CardNumber + "</td>";							
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + CardHolderName + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + CVC + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + CardExpireDate + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + Status + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #191919; font-weight: 600\">" + TaxAmount + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #191919; font-weight: 600\">" + TotalAmount + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + PaymentDate + "</td>";
-							output += "<td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + BillID + "</td></tr>";
+							output += "<tr \"><td style=\"padding-top: 6px; padding-bottom: 6px; text-align: center; color: #3B3B3B;\">" + PaymentID + "</td>";
+							output += "<td \">" + CardType + "</td>";
+							output += "<td \">" + CardNumber + "</td>";							
+							output += "<td \">" + CardHolderName + "</td>";
+							output += "<td \">" + CVC + "</td>";
+							output += "<td \">" + CardExpireDate + "</td>";
+							output += "<td \">" + Status + "</td>";
+							output += "<td \">" + TaxAmount + "</td>";
+							output += "<td \">" + TotalAmount + "</td>";
+							output += "<td \">" + PaymentDate + "</td>";
+							output += "<td \">" + BillID + "</td></tr>";
 						
 						
 							// buttons
