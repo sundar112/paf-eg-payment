@@ -37,8 +37,56 @@ $(document).on("click", ".btnUpdate", function(event)
  $("#PaymentDate").val($(this).closest("tr").find('td:eq(5)').text());
  $("#BillID").val($(this).closest("tr").find('td:eq(6)').text());
 });
+//REMOVE===========================================
+$(document).on("click", ".btnRemove", function(event) 
+{  
+	$.ajax(  
+	{   
+		url : "PaymentService",   
+		type : "DELETE",   
+		data : "PaymentID=" + $(this).data("PaymentID"),   
+		dataType : "text",   
+		complete : function(response, status)   
+		{    
+			onPaymentComplete(response.responseText, status);   
+		}  
+	}); 
+}); 
+function onPaymentComplete(response, status) 
+{  
+	if (status == "success")  
+	{   
+		var resultSet = JSON.parse(response); 
+
+		if (resultSet.status.trim() == "success")   
+		{    
+			
+			$("#alertSuccess").text("Successfully deleted.");    
+			$("#alertSuccess").show(); 
+		
+			$("#divBillingGrid").html(resultSet.data); 
+			
+		} else if (resultSet.status.trim() == "error")   
+		{    
+			$("#alertError").text(resultSet.data);    
+			$("#alertError").show();   
+		}
+		
+
+	} else if (status == "error")  
+	{   
+		$("#alertError").text("Error while deleting.");   
+		$("#alertError").show();  
+	} else  
+	{   
+		$("#alertError").text("Unknown error while deleting..");   
+		$("#alertError").show();  
+	}
+}
+
+
 // CLIENT-MODEL================================================================
-function validateItemForm()
+function validatePaymentForm()
 {
 // CODE
 if ($("#CardType").val().trim() == "")
